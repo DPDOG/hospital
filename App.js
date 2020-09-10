@@ -11,15 +11,19 @@ import React from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import Home from './src/Home';
+import DoctorScreen from "./src/DoctorScreen";
+import PatientScreen from "./src/PatientScreen";
 
 
 const rootStack = createStackNavigator({
     Home: {screen: Home},
+    DoctorScreen: {screen: DoctorScreen},
+    PatientScreen: {screen: PatientScreen},
 
 }, {
     initialRouteName: 'Home',
     defaultNavigationOptions: {
-        gestureEnabled: false,
+        gestureEnabled: true,
     },
 });
 
@@ -36,6 +40,4 @@ class App extends React.Component {
         );
     }
 }
-
-
 export default App;
