@@ -1,0 +1,40 @@
+[ {
+        "name": "Dr. ABC",
+        "empID" : "12345",
+        "dP" : "https://reactnative.dev/img/tiny_logo.png",
+        "specialization": "General Physician",
+        "degree": "M.S. General Medicine",
+        "about": "Aaaaaaaaaaaaaaaaaa Bbbbbbbbbbbbbbbbbb Ccccccccccccccccc Ddddddddddddddddd",
+		"Department": {
+            "departmentName": "Surgery, Gastro, General OPD",
+            "day": "Mon to Fri",
+			"timing": "9 AM to 6 PM"
+        }
+  },
+    {
+        "name": "Dr. ABC",
+        "empID" : "12345",
+        "dP" : "https://reactnative.dev/img/tiny_logo.png",
+        "specialization": "General Physician",
+        "degree": "M.S. General Medicine",
+        "about": "Aaaaaaaaaaaaaaaaaa Bbbbbbbbbbbbbbbbbb Ccccccccccccccccc Ddddddddddddddddd",
+        "Department": {
+            "departmentName": "Surgery, Gastro, General OPD",
+            "day": "Mon to Fri",
+            "timing": "9 AM to 6 PM"
+        }
+    },
+    {
+        "name": "Dr. ABC",
+        "empID" : "12345",
+        "dP" : "https://reactnative.dev/img/tiny_logo.png",
+        "specialization": "General Physician",
+        "degree": "M.S. General Medicine",
+        "about": "Aaaaaaaaaaaaaaaaaa Bbbbbbbbbbbbbbbbbb Ccccccccccccccccc Ddddddddddddddddd",
+        "Department": {
+            "departmentName": "Surgery, Gastro, General OPD",
+            "day": "Mon to Fri",
+            "timing": "9 AM to 6 PM"
+        }
+    }
+]
