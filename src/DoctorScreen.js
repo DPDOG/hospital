@@ -1,88 +1,65 @@
 import React, {Component} from 'react';
+import DocData from '../res/JSon/DoctorData.json';
 
 import {
+    SafeAreaView,
     Text,
     View,
     ImageBackground,
     TouchableWithoutFeedback,
     StyleSheet,
+    FlatList,
+    Image
 } from 'react-native';
+import * as StatusBar from "react-native";
+
+const Item = ({ doctor }) => (
+    <View style={styles.item}>
+        <Image style={styles.logo} source={{uri: 'https://reactnative.dev/img/tiny_logo.png'}}/>
+        <Text style={styles.title}> {doctor.name} </Text>
+        <Text style={styles.title}> {doctor.specialization} </Text>
+    </View>
+);
+
+const renderItem = ({ item }) => (
+    <Item doctor={item} />
+);
 
 export default class DoctorScreen extends Component {
-    static navigationOptions = {
-        headerShown: false,
-    };
 
     render() {
         return (
             <View style={styles.container}>
                 <ImageBackground source={require('../res/welcome.jpeg')} style={{width: '100%', height: '100%'}}>
-                    <View style={styles.btnContainer}>
-                        <TouchableWithoutFeedback onPress={() => {
-                            // this.props.navigation.navigate('Welcome');
-                            alert('Verma User Click');
-                        }}>
-                            <View style={styles.btnLeft}>
-                                <Text style={styles.btnText}>User</Text>
-                            </View>
-                        </TouchableWithoutFeedback>
-
-
-                        <TouchableWithoutFeedback onPress={() => {
-                            // this.props.navigation.navigate('Welcome');
-                            alert('Deepak Admin Click');
-                        }}>
-                            <View style={styles.btnRight}>
-                                <Text style={styles.btnText}>Admin</Text>
-                            </View>
-                        </TouchableWithoutFeedback>
-
-                    </View>
+                    <SafeAreaView style={styles.container}>
+                        <FlatList
+                             data={DocData}
+                            renderItem={renderItem}
+                             keyExtractor={item => item.id}
+                        />
+                    </SafeAreaView>
                 </ImageBackground>
             </View>
         );
     }
 }
 
-    const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-        },
-
-        btnContainer: {
-            position: 'absolute',
-            bottom: 30,
-            left: 30,
-            flexDirection: 'row'
-            // justifyContent: 'space-between'
-        },
-
-        btnLeft: {
-            width: 165,
-            borderWidth: 1,
-            borderColor: '#7e7e7e',
-            backgroundColor: '#7e7e7e',
-            borderRadius: 50,
-            height: 60,
-            justifyContent: 'center',
-            alignItems: 'center'
-        },
-
-        btnRight: {
-            width: 165,
-            borderWidth: 1,
-            borderColor: '#5C80BC',
-            backgroundColor: '#5C80BC',
-            borderRadius: 50,
-            height: 60,
-            marginLeft: 20,
-            justifyContent: 'center',
-            alignItems: 'center'
-        },
-
-        btnText: {
-            color: '#FFF',
-            fontSize: 16,
-            letterSpacing: 1
-        }
-    });
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        // marginTop: StatusBar. || 0,
+    },
+    item: {
+        backgroundColor: 'powderblue',
+        padding: 20,
+        marginVertical: 8,
+        marginHorizontal: 16,
+    },
+    title: {
+        fontSize: 32,
+    },
+    logo: {
+        width: 80,
+        height: 80,
+    },
+});

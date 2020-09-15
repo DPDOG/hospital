@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import {
     Text,
     View,
@@ -10,7 +9,7 @@ import {
 
 export default class PatientScreen extends Component {
     static navigationOptions = {
-        headerShown: false,
+        headerShown: true,
     };
 
     render() {
